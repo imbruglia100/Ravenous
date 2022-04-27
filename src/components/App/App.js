@@ -1,28 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BusinessList from '../BusinessList/BusinessList.js';
 import SearchBar from '../SearchBar/SearchBar.js';
 import './App.css';
-
+import Yelp from '../../util/Yelp.js';
 
 
 function App() {
 
-  const business = {imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
-  name: 'MarginOtto Pizzeria',
-  address: '1010 Paddington Way',
-  city: 'Flavortown',
-  state: 'NY',
-  zipCode: '10101',
-  category: 'Italian',
-  rating: 4.5,
-  reviewCount: 90
-}
+  const [businesses, setBusinesses] = useState([]);
 
-const searchYelp = (term, location, sortBy) => {
-  console.log(`${term}, ${location}, ${sortBy}`)
+const searchYelp = async (term, location, sortBy) => {
+    setBusinesses(await Yelp.search(term, location, sortBy))
 }
-
-const businesses = [business, business,business,business,business ];
+  console.log(businesses)
   return (
     <div className="App">
     <h1>ravenous</h1>

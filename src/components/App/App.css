@@ -7,6 +7,14 @@
   pointer-events: none;
 }
 
+h1 {
+  width: 100%;
+  background-color: orange;
+  height: 10vh;
+  font-size: 8vh;
+  font-weight: 600;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

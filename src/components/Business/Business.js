@@ -2,7 +2,7 @@ import React from 'react';
 import './Business.css';
 
 
-const companyImage = "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg";
+
 
 class Business extends React.Component {
 
@@ -10,7 +10,7 @@ class Business extends React.Component {
     render(){
         return (
   <div className="Business">
-    <div style={{ backgroundImage: "url(" + companyImage + ")"}} className="image-container">
+    <div style={{ backgroundImage: "url(" + this.props.business.imageSrc + ")"}} className="image-container">
 
     </div>
     <h2>{this.props.business.name}</h2>
